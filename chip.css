@@ -1,0 +1,253 @@
+/* --- GLOBAL STYLES --- */
+:root {
+    --primary-color: #e67e22; /* Machungwa ya Chips */
+    --secondary-color: #d35400; /* Machungwa Meusi */
+    --dark-color: #2c3e50; /* Bluu Iliyoiva */
+    --light-color: #fffaf0; /* Kweupe Kidogo */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: #333;
+    scroll-behavior: smooth; /* Kuteleza laini ukibofya menu */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+/* --- HEADER / NAV --- */
+header {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: var(--dark-color);
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- HOME SECTION --- */
+.home {
+    height: 100vh;
+    /* Picha ya nyuma (Background) */
+    background: url(image/pexels-eduardo.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 80px; /* Nafasi kwa ajili ya header fixed */
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.home-content p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* --- WHY US SECTION --- */
+.why-us {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.why-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card .icon {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+
+.gallery {
+    padding: 100px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Inahakikisha picha inajaa vizuri bila kuharibika */
+    transition: var(--transition);
+}
+
+/* Kichwa cha picha kinachotokea ukisogeza mouse (Hover) */
+.gallery-item .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(230, 126, 34, 0.8); /* Rangi ya machungwa yenye uwazi */
+    color: var(--white);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    opacity: 0;
+    transition: var(--transition);
+    font-weight: 600; 
+    font-size: 1.2rem;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Picha inakua kidogo */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* --- MENU SECTION --- */
+.menu {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.menu-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 2px dashed #eee;
+    font-size: 1.1rem;
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer p { margin-bottom: 10px; opacity: 0.8; }
+footer strong { font-size: 1.2rem; color: var(--primary-color); opacity: 1;}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    header { padding: 15px 20px; flex-direction: column; }
+    nav { margin-top: 15px; }
+    nav a { margin: 0 10px; font-size: 14px; }
+    .home-content h1 { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+}
